@@ -4,9 +4,14 @@ import classNames from 'classnames';
 
 //size: large, medium, small
 //color: blue, pink, gray
-function Button({children, size, color}) {
+function Button({children, size, color, outline, fullWidth, className, ...rest}) {
     return (
-        <button className={classNames('Button', size, color)}>{children}</button>
+        <button className={classNames('Button', size, color, {
+            outline,
+            fullWidth,
+        }, className)}
+        {...rest}
+        >{children}</button>
     );
 }
 
